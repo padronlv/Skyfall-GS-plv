@@ -57,7 +57,7 @@ except ImportError:
 os.makedirs("./depth_tmp", exist_ok=True)
 moge_standalone = MoGeIDU(
     "./depth_tmp",
-    "cuda:0",
+    "cuda:5",
     60.0
 )
 
@@ -448,7 +448,7 @@ def generate_idu_training_set(
         if use_flow_edit:
             refine_pipe = FlowEditRefineIDU(
                 save_path = refine_path,
-                device="cuda:0",
+                device="cuda:5",
                 model_type=model_type
             )
             final_imgs = refine_pipe.run(
@@ -461,7 +461,7 @@ def generate_idu_training_set(
         elif use_difix3d:
             refine_pipe = Difix3DRefineIDU(
                 save_path=refine_path,
-                device="cuda:0",
+                device="cuda:5",
                 model_name=difix3d_model,
                 use_reference=difix3d_use_reference
             )
@@ -475,7 +475,7 @@ def generate_idu_training_set(
         elif use_dreamscene:
             refine_pipe = DreamSceneRefineIDU(
                 save_path=refine_path,
-                device="cuda:0",
+                device="cuda:5",
                 model="sd21" if use_sd21 else "diffusionsat",
             )
             final_imgs = refine_pipe.run(
@@ -496,7 +496,7 @@ def generate_idu_training_set(
     os.makedirs(depth_path, exist_ok=True)
     moge = MoGeIDU(
         depth_path,
-        device = "cuda:0",
+        device = "cuda:5",
         fov_x=fov_x
     )
     depths = moge.run(final_imgs)
