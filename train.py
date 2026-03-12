@@ -448,7 +448,7 @@ def generate_idu_training_set(
         if use_flow_edit:
             refine_pipe = FlowEditRefineIDU(
                 save_path = refine_path,
-                device="cuda:0",
+                device="cuda:1",
                 model_type=model_type
             )
             final_imgs = refine_pipe.run(
