@@ -9,7 +9,7 @@
 	url = https://github.com/rahul-goel/fused-ssim.git
 [submodule "submodules/FlowEdit"]
 	path = submodules/FlowEdit
-	url = https://github.com/jayin92/FlowEdit.git
+	url = https://github.com/padronlv/FlowEdit.git
 [submodule "submodules/simple-knn"]
 	path = submodules/simple-knn
 	url = https://github.com/camenduru/simple-knn.git
